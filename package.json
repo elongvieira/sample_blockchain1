@@ -1,3 +1,12 @@
 {
-        "scripts": {"test": "jest --watchAll"}
+        "scripts": {
+                "test": "jest --watchAll",
+                "start": "node app/index.js",
+                "dev": "nodemon app/index.js"
+        },
+        "dependencies": {
+                "crypto-js": "^4.1.1",
+                "express": "^4.17.3",
+                "nodemon": "^2.0.15"
+        }
 }
