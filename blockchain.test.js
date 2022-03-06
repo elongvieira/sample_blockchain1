@@ -40,4 +40,18 @@ describe('Blockchain', () => {
 
         expect(blockchain.isValidChain(blockchain2.chain)).toBe(false);
     });
+
+    it('replace the chain with a valid chain', () => {
+        blockchain2.addBlock('500U$');
+        blockchain.replaceChain(blockchain2.chain);
+
+        expect(blockchain.chain).toEqual(blockchain2.chain);
+    });
+
+    it('does not replace the chain with one of less than or equal length', () => {
+        blockchain.addBlock('200U$');
+        blockchain.replaceChain(blockchain2.chain);
+
+        expect(blockchain.chain).not.toEqual(blockchain2.chain);
+    });
 })
